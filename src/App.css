@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+ @import 'normalize.css';
+
+ *{
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+
+ }
+*:before, *:after{
+  box-sizing:inherit;
+}
+html{
+  --container: 300px;
+  --padding-container: 10px;
+  position: relative;
+  overflow-x: hidden;
+}
+body{
+  font-family:Nunito, sans-serif;
+  min-width:320px;
+  min-height:100vh;
+  background-color: #F9F9F9;
+  color: black;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img,svg{
+  max-width: 100%;
+  max-height:100%;
+  height:auto;
+  display: block;
 }
+ button{
+  padding: 0;
+  background-color:transparent;
+  border:none;
+  cursor:pointer;
+} 
+a{
+  text-decoration:none;
+  color:inherit;
+}
+ ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+} 
+h1, h2, h3,figure{
+  margin: 0;
+}
+fieldset{
+  margin: 0;
+  padding: 0;
+  border:none;
+}
+.visually-hidden{
+  position: fixed;
+  transform: scale(0);
+}
+.container{
+  max-width: calc(var(--container) + var(--padding-container)*2);
+  padding:0 var(--padding-container);
+  margin: 0 auto;
+}
+.currency{
+  font-weight: 400;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+} 
+
+@media (min-width:480px) {
+  html{
+    --container: 640px
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width:768px) {
+  html{
+    --padding-container: 64px;
+    min-height: 229px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width:1024px) {
+  html{
+    --container: 960px;
+    --padding-container: 32px;
+  }
+}
+@media (min-width:1360px) {
+  html{
+    --container: 1290px
+    
   }
 }
