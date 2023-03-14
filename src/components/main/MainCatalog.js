@@ -13,10 +13,9 @@ function MainCatalog({id, image, name, price }) {
       <h2 className="catalog__title">Бургеры</h2>
 
       <div className="catalog_wrap_list">
-        {product.map((product) => {
-          return (
             <ul className="catalog__list">
-              <li className="catalog__item">
+            {product.map((product) => 
+              <li key={product.id} className="catalog__item">
                 <article className="product">
                   <img src={product.image} alt="" className="product__image" />
                   <p className="product__price">
@@ -34,9 +33,11 @@ function MainCatalog({id, image, name, price }) {
              
                 </article>
               </li>
-            </ul>
-          );
-        })}
+
+          
+            )};
+              </ul>
+      
          {modalIsOpen &&<Modal  closeModal={setModalIsOpen}/>}
 
       </div>
